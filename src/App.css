@@ -1,0 +1,395 @@
+/* ========================= */
+/* GLOBAL                    */
+/* ========================= */
+
+:root {
+  --bg-primary: #071c30;
+  --bg-secondary: #102d45;
+  --bg-hover: #17435e;
+  --accent: #00d4e8;
+  --accent-hover: #58edfa;
+  --text-primary: #f0fafc;
+  --text-secondary: #9cc6d8;
+  --border: #24506a;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ========================= */
+/* HEADER                    */
+/* ========================= */
+
+header {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 55px 20px 35px;
+  text-align: center;
+}
+
+header h1 {
+  color: var(--text-primary);
+  font-size: 48px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+header h1 img {
+  width: 55px;
+  height: 55px;
+  object-fit: contain;
+}
+
+.results-header {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-header h2 {
+  color: var(--text-primary);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.results-header p {
+  color: var(--accent);
+  font-size: 14px;
+}
+/* ========================= */
+/* SEARCH BAR                */
+/* ========================= */
+
+.search-container {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 5px 12px 5px 20px;
+  transition: border-color 0.2s ease;
+}
+
+.search-container:focus-within {
+  border-color: var(--accent);
+}
+
+.search-container input {
+  flex: 1;
+  min-width: 0;
+  padding: 15px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.search-container input::placeholder {
+  color: var(--text-secondary);
+}
+
+.search-container button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: var(--bg-hover);
+  color: var(--accent);
+}
+
+/* ========================= */
+/* EMOJI GRID                */
+/* ========================= */
+
+main {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 15px 20px 35px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* ========================= */
+/* EMOJI CARDS               */
+/* ========================= */
+
+.emoji-line {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 86px;
+  padding: 18px 22px;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: var(--text-primary);
+  font-size: 15px;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.emoji-line:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.emoji-line span:first-child {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.emoji-line span:last-child {
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}
+
+.copy-feedback {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.emoji-line > svg {
+  margin-left: auto;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.copy-feedback {
+  margin-left: auto;
+}
+
+/* ========================= */
+/* PAGINATION                */
+/* ========================= */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px 20px 50px;
+}
+
+.pagination p {
+  color: var(--text-primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.pagination button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background-color: var(--bg-secondary);
+  color: var(--accent);
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pagination button:hover {
+  background-color: var(--accent);
+  color: var(--bg-primary);
+  border-color: var(--accent);
+}
+
+/* ========================= */
+/* EMPTY RESULTS             */
+/* ========================= */
+
+main > p {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 18px;
+  padding: 50px 20px;
+}
+
+/* ========================= */
+/* FOOTER - OCEAN WAVES      */
+/* ========================= */
+
+footer {
+  position: relative;
+  width: 100%;
+  margin-top: auto;
+  padding: 0;
+  border: none;
+  background-color: #087f9d;
+  overflow: hidden;
+}
+
+.footer-waves {
+  position: relative;
+  height: 100px;
+  background-color: var(--bg-primary);
+  overflow: hidden;
+}
+
+.wave {
+  position: absolute;
+  width: 160%;
+  height: 110px;
+  left: -30%;
+  border-radius: 45% 55% 0 0;
+}
+
+.wave-one {
+  top: 20px;
+  background-color: #0c4865;
+  transform: rotate(-2deg);
+}
+
+.wave-two {
+  top: 45px;
+  background-color: #096b89;
+  border-radius: 55% 45% 0 0;
+  transform: rotate(2deg);
+}
+
+.wave-three {
+  top: 70px;
+  background-color: #087f9d;
+  border-radius: 48% 52% 0 0;
+  transform: rotate(-1deg);
+}
+
+.footer-content {
+  position: relative;
+  z-index: 1;
+  padding: 10px 20px 28px;
+  text-align: center;
+}
+
+.footer-content p {
+  color: var(--text-primary);
+  font-size: 13px;
+  line-height: 1.8;
+}
+
+.footer-content p:last-child {
+  font-size: 11px;
+  color: #d1f4f8;
+}
+
+/* ========================= */
+/* FOOTER - RESPONSIVE       */
+/* ========================= */
+
+@media (max-width: 600px) {
+  .footer-waves {
+    height: 80px;
+  }
+
+  .wave {
+    height: 90px;
+  }
+
+  .footer-content {
+    padding: 10px 15px 25px;
+  }
+}
+
+/* ========================= */
+/* RESPONSIVE - TABLET       */
+/* ========================= */
+
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  header h1 {
+    font-size: 40px;
+  }
+}
+
+/* ========================= */
+/* RESPONSIVE - MOBILE       */
+/* ========================= */
+
+@media (max-width: 600px) {
+  header {
+    padding-top: 35px;
+  }
+
+  header h1 {
+    font-size: 34px;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .emoji-line {
+    min-height: 70px;
+    padding: 14px 18px;
+  }
+
+  .pagination {
+    gap: 18px;
+  }
+}
